@@ -1,0 +1,17 @@
+<h1>Showing all Movies</h1>
+
+<ul>
+  <% @movies.each do |movie| %>
+    <li>
+      <%= link_to movie.title, movie %>
+      (<%= movie.rating %>)
+      <br>
+      <small> <%= movie.release_date %> </small>
+      <p>
+        <%= movie.description %>
+      </p>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Movie", new_movie_path %>

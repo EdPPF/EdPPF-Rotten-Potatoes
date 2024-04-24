@@ -1,0 +1,15 @@
+<h1> <%= @movie.title %> </h1>
+<strong> <%= @movie.rating %> </strong>
+<small> <%= @movie.release_date %> </small>
+<h3>
+  <%= @movie.description %>
+</h3>
+<ul>
+  <li> <%= link_to "Edit", edit_movie_path(@movie) %> </li>
+  <li> <%= link_to "Delete", movie_path(@movie), data: {
+    turbo_method: "delete",
+    turbo_confirm: "Are you sure you want to delete this movie?",
+  } %> </li>
+</ul>
+
+<%= link_to "<< Back to All Movies", root_path %>
